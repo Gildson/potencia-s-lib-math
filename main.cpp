@@ -9,13 +9,21 @@ int main()
     cin >> ni >> nf;
     cout << "Digite o expoente inicial e final" << endl;
     cin >> ei >> ef;
-    for (int i=ni; i<=nf; i++)
-        for (int j=ei; j<=ef; j++)
-            for (int k=j; k<=j; k=i)
-            {
-                produto = k*k;
-                cout << produto << endl;
+    for (int base = ni; base <= nf; base++){
+        for (int exp=ei; exp<=ef; exp++){
+            if (exp == 0){
+                produto = 1;
             }
+            else {
+                produto = base;
+                for (int x=2; x<=exp; x++){
+                    produto *=base ;
+                }
+            }
+        cout << produto << endl;
+        }
+
+    }
 
 return 0;
 }
